@@ -1,0 +1,10 @@
+@mixin cardflex() {
+    display: flex;
+    gap: 0.5em;
+    align-items: center
+};
+
+@mixin hover() {
+    color: var(--primary-2);
+    cursor: pointer;
+};

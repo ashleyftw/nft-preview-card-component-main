@@ -1,0 +1,125 @@
+@use 'reset' as *;
+@use 'colors' as *;
+@use 'layout' as *;
+@use 'mixins' as*;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+body {
+    background-color: var(--neutral-main-bg);
+    color: var(--primary-1);
+    font-family: 'Outfit', sans-serif;
+    display: grid;
+    place-content: center;
+}
+
+//image overlay
+
+.img-container {
+    position: relative;
+}
+
+.img-container div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: hsl(178, 100%, 50%, 50%);
+    opacity: 0;
+    border-radius: 1rem;
+
+}
+
+.img-container div:hover {
+    opacity: 1;
+    cursor: pointer;
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.card {
+    max-width: 25em;
+    background-color: var(--neutral-card-bg);
+    margin: var(--mar-xl);
+    padding: var(--pad-xl);
+    border-radius: 1rem;
+    
+    img {
+        border-radius: 1rem;
+    }
+
+    &-title {
+        color: var(--neutral-white);
+        padding: var(--pad-sm) 0;
+        font-size: 1.5rem;
+        &:hover{
+            @include hover;
+        }
+    }
+    &-text {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    @media (min-width: 600px) {
+        margin: 2em 5em;
+    }
+};
+
+.flex-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--pad-lg) 0;
+    img {
+        object-fit: contain;
+    }
+    border-bottom: 1px solid var(--neutral-line);
+};
+
+.card-price {
+    color: var(--primary-2);
+    @include cardflex;
+    font-size: 0.8rem;
+}
+
+.card-time {
+    color: var(--primary-1);
+    @include cardflex;
+    font-size: 1rem;
+}
+
+.card-author {
+    @include cardflex;
+    img {
+        border: 1px solid var(--neutral-white);
+        border-radius: 50%;
+        object-fit: contain;
+        max-width: 3em;
+    }
+    span {
+        color: var(--neutral-white);
+        &:hover{
+            @include hover;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+    }
+    margin-top: 1.5em;
+};
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+};
+.attribution 
+    a { 
+    color: hsl(228, 45%, 44%); 
+};

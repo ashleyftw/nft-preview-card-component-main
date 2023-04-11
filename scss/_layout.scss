@@ -1,0 +1,22 @@
+$margins: (
+    sm: 0.75em,
+    md: 1em,
+    lg: 1.25em,
+    xl: 2em
+);
+
+$paddings: (
+    sm: 0.75em,
+    md: 1em,
+    lg: 1.25em,
+    xl: 2em
+);
+
+:root {
+    @each $mar, $size in $margins {
+        --mar-#{$mar}: #{$size};
+    }
+    @each $pad, $size in $paddings {
+        --pad-#{$pad}: #{$size};
+    }
+}
